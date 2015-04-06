@@ -1,0 +1,12 @@
+{
+  "name": "node-dir-split",
+  "version": "1.0.0",
+  "description": "Take a large (or small) directory of files and split the files into directories based on year.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ash Ryan",
+  "license": "ISC"
+}
