@@ -18,5 +18,7 @@ function getFileInfo(filename) {
 		if (err) return done(err);
 		console.log(filename);
 		console.log(stats);
+		console.log(stats.ctime.getFullYear());
+		console.log(stats.ctime.getMonth() + 1);
 	});
 }
