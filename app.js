@@ -5,11 +5,26 @@ var readDirPath = process.argv[2];
 var writeDirPath = process.argv[3];
 var pathToRead;
 
-fs.readdir(readDirPath).forEach(getFileInfo).then(function(files) {
+fs.readdirAsync(readDirPath)
+.then(function(files) {
 	console.log(files);
+	pathToRead = readDirPath;
+
+	console.log("READING PATH: ", pathToRead);
+	files.forEach(getFileInfo);
+})
+.then(function() {
+	return fs.readdirAsync(writeDirPath);
+})
+.then(function(files) {
+	console.log(files);
+	pathToRead = writeDirPath;
+
+	console.log("READING PATH: ", pathToRead);
+	files.forEach(getFileInfo);	
 });
 
-
+// Callbacks
 // fs.readdir(readDirPath, function(err, files){
 // 	if (err) return done(err);
 
